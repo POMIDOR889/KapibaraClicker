@@ -1,0 +1,48 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	
++++ b/main.py	(date 1684008632003)
+@@ -8,7 +8,7 @@
+ root = Tk()
+ root.protocol("WM_DELETE_WINDOW", on_closing)
+ root.title("Kapibara Clicker")
+-root.geometry("500x600")
++root.geometry("500x600",)
+ root.resizable(0, 0)
+ root.iconbitmap("Kapibara.ico")
+ root.wm_attributes("-topmost", 1)
+@@ -44,17 +44,17 @@
+         count = update * 4
+     label2['text'] = 'Цена:' + str(round(count, 3)) + '$'
+     if update >= 0.899:
+-        Button(root, width=135, height=139,image=Energy, highlightthickness=0, bd=2, bg="Orange", command=dopclick).place(x=1, y=320)
++        Button(root, width=134,image=Energy, highlightthickness=0, bd=2, bg="Orange", command=dopclick).place(x=1, y=320)
+ 
+ def dopclickMEGA():
+     global clicks
+     global update2
+     global count2
+     if clicks >= count2:
+-        clicks = round((clicks - count2),5)
++        clicks = round((clicks - count2),3)
+         update2 = update2 + update2/4
+-        count2 = update2 * 5
+-    label3['text'] = 'Цена:' + str(round(count2, 5)) + '$'
++        count2 = update2 * 9
++    label3['text'] = 'Цена:' + str(round(count2, 9)) + '$'
+     if update2 >= 0.999999999:
+         Button(root, width=184, height= 145,image=Tesla, highlightthickness=0, bd=2, bg="Orange", command=dopclickMEGA).place(x=150, y=410)
+ 
+@@ -65,7 +65,7 @@
+ Tesla=PhotoImage(file='White-Tesla-Model-S-PNG-Picture.png')
+ Tesla= Tesla.subsample(3, 3)
+ Energy =PhotoImage(file='5d0018c3bd65f16b4860bcc0.png')
+-Energy = Energy.subsample(6, 6)
++Energy = Energy.subsample(10, 10)
+ Fresko =PhotoImage(file='1661906225_6-papik-pro-p-smailik-s-krasnimi-glazami-png-6.png')
+ Fresko = Fresko.subsample(1, 1)
+ Fresko2 =PhotoImage(file='pngimg.com - elon_musk_PNG43.png')
